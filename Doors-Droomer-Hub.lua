@@ -1,48 +1,53 @@
+-- Load Rayfield
+print("Loading Rayfield...")
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+print("Rayfield Loaded")
 
+-- Create the main window
 local Window = Rayfield:CreateWindow({
     Name = "DroomerHub",
-    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+    Icon = nil, -- No icon. You can set to "heart" or an ImageId like "rbxassetid://12345678"
     LoadingTitle = "Droomer hub doors Version",
     LoadingSubtitle = "by DroomerTeam",
-    Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
- 
+    Theme = "Default",
+
     DisableRayfieldPrompts = false,
-    DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
- 
+    DisableBuildWarnings = false,
+
     ConfigurationSaving = {
-       Enabled = true,
-       FolderName = nil, -- Create a custom folder for your hub/game
-       FileName = "Big Hub"
+        Enabled = true,
+        FolderName = "DroomerHub", -- Added folder name to avoid nil
+        FileName = "Big Hub"
     },
- 
+
     Discord = {
-       Enabled = true, -- Prompt the user to join your Discord server if their executor supports it
-       Invite = "bB3qebPdmM", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
-       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+        Enabled = true,
+        Invite = "bB3qebPdmM",
+        RememberJoins = true
     },
- 
-    KeySystem = true, -- Set this to true to use our key system
+
+    KeySystem = true,
     KeySettings = {
-       Title = "Droomer Doors Hub",
-       Subtitle = "Key System",
-       Note = "testing key is Doors93", -- Use this to tell the user how to get a key
-       FileName = "Doors93", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
-       SaveKey = false, -- The user's key will be saved, but if you change the key, they will be unable to use your script
-       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-       Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+        Title = "Droomer Doors Hub",
+        Subtitle = "Key System",
+        Note = "Testing key is: Doors93",
+        FileName = "Doors93",
+        SaveKey = false,
+        GrabKeyFromSite = false,
+        Key = {"Doors93"} -- Fixed mismatch
     }
- })
+})
 
+-- Create a tab
+local Tab = Window:CreateTab("Esp", "rbxassetid://4483362458") -- Converted to proper asset format
 
-local Tab = Window:CreateTab("Esp", 4483362458) -- Title, Image
-
+-- Create a toggle
 local Toggle = Tab:CreateToggle({
-   Name = "Door ESP",
-   CurrentValue = false,
-   Flag = "Toggler", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-   -- The function that takes place when the toggle is pressed
-   -- The variable (Value) is a boolean on whether the toggle is true or false
-   end,
+    Name = "Door ESP",
+    CurrentValue = false,
+    Flag = "Toggler",
+    Callback = function(Value)
+        print("Door ESP toggled:", Value)
+        -- Your logic for ESP here
+    end,
 })
