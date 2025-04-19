@@ -4,7 +4,7 @@ local Window = Rayfield:CreateWindow({
     Name = "DroomerHub",
     Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
     LoadingTitle = "Droomer hub doors Version",
-    LoadingSubtitle = "by Sirius",
+    LoadingSubtitle = "by DroomerTeam",
     Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
  
     DisableRayfieldPrompts = false,
