@@ -37,9 +37,12 @@ local Window = Rayfield:CreateWindow({
 
 local Tab = Window:CreateTab("Esp", 4483362458) -- Title, Image
 
-local Button = Tab:CreateButton({
-   Name = "Button Example",
-   Callback = function()
-   print("sigma sigma boy sigma boy")
+local Toggle = Tab:CreateToggle({
+   Name = "Door ESP",
+   CurrentValue = false,
+   Flag = "Toggler", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   -- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
 })
