@@ -30,6 +30,16 @@ local Window = Rayfield:CreateWindow({
        FileName = "Doors93", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
        SaveKey = false, -- The user's key will be saved, but if you change the key, they will be unable to use your script
        GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-       Key = {"Doors93"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+       Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
     }
  })
+
+
+local Tab = Window:CreateTab("Esp", 4483362458) -- Title, Image
+
+local Button = Tab:CreateButton({
+   Name = "Button Example",
+   Callback = function()
+   print("sigma sigma boy sigma boy")
+   end,
+})
