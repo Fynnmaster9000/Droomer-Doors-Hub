@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/DroomerTeam",
+      "destination": "/public/DroomerHub.lua"
+    }
+  ]
+}
