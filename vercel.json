@@ -3,6 +3,10 @@
     {
       "source": "/DroomerTeam",
       "destination": "/DroomerHub.lua"
+    },
+    {
+      "source": "/drooomerinternal",
+      "destination": "/drooomerinternal.lua"
     }
   ]
 }
