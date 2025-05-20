@@ -7,6 +7,10 @@
     {
       "source": "/drooomerinternal",
       "destination": "/drooomerinternal.lua"
+    },
+    {
+      "source": "/droomerternal",
+      "destination": "/droomerternal.lua"
     }
   ]
 }
